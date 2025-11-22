@@ -75,8 +75,10 @@ export const scoreWord = (word) => {
 export const highestScoreFrom = (words) => {
   // Implement this method for wave 4
   let maxWord = {word:words[0], score:scoreWord(words[0])};
+
   for(const word of words){
     const wordUpper = word.toUpperCase();
+
     if (wordUpper.length === 10){
       maxWord.word = wordUpper;
       maxWord.score = scoreWord(wordUpper);
@@ -91,6 +93,5 @@ export const highestScoreFrom = (words) => {
         maxWord.score = scoreWord(wordUpper);
       }
     }
-
   }return maxWord;
 };
