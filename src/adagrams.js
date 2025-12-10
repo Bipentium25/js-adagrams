@@ -62,10 +62,10 @@ export const scoreWord = (word) => {
 
   let totalScore = 0;
   const wordUpper = word.toUpperCase();
-  for (const letter of wordUpper){
+  for (const letter of wordUpper) {
     totalScore += letterScores[letter];
   }
-  if(word.length >6 && word.length < 11 ){
+  if (word.length >6 && word.length < 11 ) {
     totalScore += 8;
   }
 
