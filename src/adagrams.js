@@ -16,7 +16,7 @@ export const drawLetters = () => {
 
   const myHand = [];
   for (let i = 0; i < 10; i++){
-    const last = letterPool.length-1;
+    const last = letterPool.length - 1;
     let letterIndex = Math.floor(Math.random()*letterPool.length);
     // eslint-disable-next-line no-self-assign
     letterPool[letterIndex], letterPool[last] = letterPool[last],letterPool[letterIndex];
