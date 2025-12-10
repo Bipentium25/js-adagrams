@@ -79,7 +79,7 @@ export const highestScoreFrom = (words) => {
   score: scoreWord(words[0])
   };
 
-  for(const word of words){
+  for (const word of words) {
   const score = scoreWord(wordUpper);
   const wordUpper = word.toUpperCase();
   
