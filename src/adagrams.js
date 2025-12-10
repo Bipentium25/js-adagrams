@@ -30,10 +30,10 @@ export const drawLetters = () => {
 export const usesAvailableLetters = (input, lettersInHand) => {
   // Implement this method for wave 2
   let handDict = {};
-  for (const letter of lettersInHand){
-    if (letter in handDict){
+  for (const letter of lettersInHand) {
+    if (letter in handDict) {
       handDict[letter] += 1;
-    }else{
+    } else {
       handDict[letter] = 1;
     }
   }
