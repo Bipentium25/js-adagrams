@@ -39,13 +39,13 @@ export const usesAvailableLetters = (input, lettersInHand) => {
   }
 
   const upperStr = input.toUpperCase();
-  for (const letter of upperStr){
-    if (handDict[letter] < 1 || !handDict[letter]){
+  for (const letter of upperStr) {
+    if (handDict[letter] < 1 || !handDict[letter]) {
       return false;
-    }else{
+    } else {
       handDict[letter] -= 1;
     }
-  }return true;
+  } return true;
 };
 
 export const scoreWord = (word) => {
