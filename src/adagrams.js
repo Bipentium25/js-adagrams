@@ -77,21 +77,26 @@ export const highestScoreFrom = (words) => {
   let maxWord = {word:words[0], score:scoreWord(words[0])};
 
   for(const word of words){
-    const wordUpper = word.toUpperCase();
-
-    if (wordUpper.length === 10){
+  const score = scoreWord(wordUpper);
+  const wordUpper = word.toUpperCase();
+  
+  if (wordUpper.length === 10) {
+    maxWord.word = wordUpper;
+    maxWord.score = score;
+    return maxWord;
+  } else {
+    if (score > maxWord.score) {
       maxWord.word = wordUpper;
-      maxWord.score = scoreWord(wordUpper);
-      return maxWord;
-    }else{
-      const currentScore = scoreWord(wordUpper);
-      if (currentScore > maxWord.score){
-        maxWord.word = wordUpper;
-        maxWord.score = currentScore;
-      }else if(currentScore === maxWord.score && wordUpper.length < maxWord.word.length){
-        maxWord.word = wordUpper;
-        maxWord.score = scoreWord(wordUpper);
-      }
+      maxWord.score = score;
+  
+    } else if (
+      score === maxWord.score &&
+      wordUpper.length < maxWord.word.length
+    ) {
+      maxWord.word = wordUpper;
+      maxWord.score = score;
     }
-  }return maxWord;
+  }
+  
+  return maxWord;
 };
